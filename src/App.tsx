@@ -1,10 +1,8 @@
 // Whenever you want to fetch from the API, you need to use that structure. Should always start with /api,
 // then the specific path, like /plants and finally the token added at the end.
 
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 console.log(import.meta.env.VITE_API_KEY);
-const fetch = require("node-fetch");
 
 import Home from "./components/Home";
 import Plants from "./components/Plants";
@@ -14,14 +12,14 @@ import PlantCard from "./components/PlantCard";
 function App() {
   return (
     <Router>
-      <h1>Hello world</h1>;
       <div>
         <Navbar />
-        <Switch>
+        <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/plants" element={<Plants />} />
-        </Switch>
+        </Routes>
       </div>
+      {/* <h1>Hello world</h1> */}
     </Router>
   );
 }

@@ -1,3 +1,5 @@
-function PlantCard() {}
+function PlantCard() {
+  return;
+}
 
 export default PlantCard;

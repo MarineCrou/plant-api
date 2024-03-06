@@ -1,3 +1,5 @@
-function Plants() {}
+function Plants() {
+  return;
+}
 
 export default Plants;
