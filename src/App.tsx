@@ -1,4 +1,5 @@
 import React from "react";
+console.log(import.meta.env.VITE_API_KEY);
 
 function App() {
   return <h1>Hello world</h1>;
