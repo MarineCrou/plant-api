@@ -1,59 +1,61 @@
 import React from "react";
 import PlantCard from "./PlantCard";
-
 function Home() {
   const [plant, setPlant] = React.useState(null);
   const [searchPlant, setSearchPlant] = React.useState("");
-
   async function fetchPlants() {
     const resp = await fetch(
-      "/api/plants?token=" + import.meta.env.VITE_API_KEY
+      `/api/plants/search?token=${import.meta.env.VITE_API_KEY}`
     );
     const plantData = await resp.json();
-    const matchPlant = plantData.data.find(
-      (plant) => plant.common_name.toLowerCase() === searchPlant.toLowerCase()
-    );
-    setPlant(matchPlant || null);
+    setPlant(plantData || null);
   }
-
   React.useEffect(() => {
     fetchPlants();
   }, []);
-
   function handleChange(e: any) {
     setSearchPlant(e.currentTarget.value);
   }
-
   function handleSearchClick() {
-    fetchPlants(searchPlant);
+    return plant?.find((plants) => {
+      return plants.name.toLowerCase().includes(searchPlant.toLowerCase());
+    });
   }
 
   return (
     // add a HERO (bulma) for full width of the page
-    <section className="hero is-link is-fullheight-with-navbar is-success">
+    <section className="hero is-fullheight-with-navbar">
       <div className="hero-body has-text-centered">
         <div className="container">
-          <p className="title">Learn About Your Favorite Plant </p>
-          <p className="subtitle">Type in it's "common name" </p>
-          {/* Create an Input for a Seach Bar to look for plant (should be common
+          <div className="card py-5 has-background-light">
+            <p className="title">Learn About Your Favorite Plants 🌸</p>
+            <p className="subtitle">Type it's usual name 🌱</p>
+            {/* Create an Input for a Seach Bar to look for plant (should be common
         name (or scientific) name) */}
-          <div is-one-quarter-desktop is-mobile>
+          </div>
+          <br />
+          <div className="level-item">
             <input
-              class="input is-primary "
-              placeholder="Enter Plant Name 🌱"
+              className="input is-primary is-rounded is-focused"
+              placeholder="Enter Plant Name :seedling:"
               type="text"
               value={searchPlant}
               onChange={handleChange}
             />
             {/* Add a Button (Search) to look for the plant */}
-            <button onClick={handleSearchClick}>Find your plant !</button>
+            <button
+              className="button is-success is-rounded"
+              onClick={handleSearchClick}
+            >
+              Find your plant !
+            </button>
           </div>
         </div>
         {/*Add a plant card, where the looked-up plant will be feature */}
         <div>
           {plant && (
             <PlantCard
-              plantId={plant.id}
+              key={plant.id}
               commonName={plant.common_name}
               img={plant.image_url}
               family={plant.family}
@@ -64,12 +66,9 @@ function Home() {
       </div>
     </section>
   );
-
   // add background image - Plant (in img)
   // Need to create the HTML :
-
   // card should fature => plantCard (where common Name resonates with searched name)
   // if time, add a random generated card (see if possible without using numbers)
 }
-
 export default Home;

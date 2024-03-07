@@ -1,5 +1,10 @@
 body {
   margin: 20px;
+  // add background image - Plant (in img)
+  background-image: url(./img/plant-cover-page.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .card {

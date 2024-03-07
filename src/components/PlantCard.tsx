@@ -1,23 +1,16 @@
 import { Link } from "react-router-dom";
 
-interface IPlantCard {
-  plantId: number;
-  commonName: string;
-  img: string;
-  scientificName: string;
-  family: string;
-}
+// interface IPlantCard {
+//   plantId: number;
+//   commonName: string;
+//   img: string;
+//   scientificName: string;
+//   family: string;
+// }
 
-function PlantCard({
-  plantId,
-  commonName,
-  img,
-  scientificName,
-  family,
-}: IPlantCard) {
+function PlantCard({ commonName, img, scientificName, family }) {
   // 1. scientific_name (data.map(item => console.log(item.scientific_name)) //https://trefle.io/api/v1/plants?token=04iSo523ENYq47fJNfcsuVYQexCi3Sklt4MoxAmN7j4
   // 2. family (data.map(plant => console.log(plant.family)) //https://trefle.io/api/v1/plants?token=04iSo523ENYq47fJNfcsuVYQexCi3Sklt4MoxAmN7j4
-  // 3. Maybe List other plants from same family ?
   // 3. edible (boolean) ? // https://trefle.io/api/v1/plants/+ ID OR PLANTNAME ?token=04iSo523ENYq47fJNfcsuVYQexCi3Sklt4MoxAmN7j4
   // 4. Where from ?
 
@@ -39,8 +32,8 @@ function PlantCard({
           <div className="card-content">
             <p>Scientific Name: {scientificName} </p>
             <p>Family species : {family}</p>
-            <p>Edible ?</p>
-            <p>Where from ?</p>
+            {/* <p>Edible ?</p>
+            <p>Where from ?</p> */}
           </div>
         </div>
       </Link>
