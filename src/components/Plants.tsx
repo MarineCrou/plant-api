@@ -1,6 +1,7 @@
 import PlantCard from "./PlantCard";
 
 function Plants() {
+  const [plants, updatePlants] = React.useState([]);
   // need to add a fetch await async function ?
   //Feature all Plants In this page (may be a little heavy, so might have to limit to 100 for eg)
   // A card/plant, that should feature :
@@ -16,13 +17,14 @@ function Plants() {
     <section className="section">
       <div className="container">
         <div className="columns is-multiline">
-          {countries?.map((country) => {
+          {plants?.map((plant) => {
             return (
               <PlantCard
-                key={country.name.common}
-                commonName={country.name.common}
-                countryRegion={country.region}
-                flagImage={country.flags.png}
+                plantId={plant.id}
+                commonName={plant.common_name}
+                img={plant.image_url}
+                scientificName={plant.scientific_name}
+                family={plant.family}
               />
             );
           })}
