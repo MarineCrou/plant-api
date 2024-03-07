@@ -15,25 +15,26 @@ function PlantCard({ commonName, img, scientificName, family }) {
   // 4. Where from ?
 
   return (
-    <div className="column is-one-quarter-desktop is-mobile">
+    <div className="column is-one-quarter-desktop is-one-third-tablet is-mobile">
       <Link to="/">
         <div className="card">
-          <div className="card-header">
-            {/* Common Name (top left corner) (data.map(item => console.log(item.common_name) */}
+          <div className="card-header has-background-success has-text-centered">
             <div className="card-header-title">{commonName}</div>
           </div>
-          {/* img (beneath common name - left side) (data.map(item => console.log(item.image_url)) // https://trefle.io/api/v1/plants?token=04iSo523ENYq47fJNfcsuVYQexCi3Sklt4MoxAmN7j4
-  // Right Side : */}
           <div className="card-image">
-            <figure className="image image-is-1by1">
+            <figure className="image image is-square">
               <img src={img} alt={commonName} />
             </figure>
           </div>
           <div className="card-content">
-            <p>Scientific Name: {scientificName} </p>
-            <p>Family species : {family}</p>
-            {/* <p>Edible ?</p>
-            <p>Where from ?</p> */}
+            <p>
+              <strong> Scientific Name: </strong>
+              {scientificName}{" "}
+            </p>
+            <p>
+              {" "}
+              <strong> Family Species:</strong> <em> {family}</em>
+            </p>
           </div>
         </div>
       </Link>
