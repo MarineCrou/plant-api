@@ -4,21 +4,22 @@ import PlantCard from "./PlantCard";
 function Plants() {
   const [plants, updatePlants] = React.useState([]);
 
-  React.useEffect(() => {
-    async function fetchPlants() {
-      try {
-        const resp = await fetch(
-          "/api/plants?token=" + import.meta.env.VITE_API_KEY
-        );
-        if (!resp.ok) {
-          throw new Error(`API call failed with status: ${resp.status}`);
-        }
-        const plantData = await resp.json();
-        updatePlants(plantData.data); // Access the 'data' array from the response
-      } catch (error) {
-        console.error("Failed to fetch plants:", error);
+  async function fetchPlants() {
+    try {
+      const resp = await fetch(
+        "/api/plants?token=" + import.meta.env.VITE_API_KEY
+      );
+      if (!resp.ok) {
+        throw new Error(`API call failed with status: ${resp.status}`);
       }
+      const plantData = await resp.json();
+      updatePlants(plantData.data); // Access the 'data' array from the response
+    } catch (error) {
+      console.error("Failed to fetch plants:", error);
     }
+  }
+
+  React.useEffect(() => {
     fetchPlants();
   }, []);
 
@@ -49,6 +50,7 @@ function Plants() {
             );
           })}
         </div>
+        <button className="button is-success">See More</button>
       </div>
     </section>
   );
