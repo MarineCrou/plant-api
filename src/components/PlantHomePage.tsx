@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 function PlantHomePage({ commonName, img, scientificName, family }: any) {
   return (
-    <div className="column is-half-desktop is-two-third-tablet is-mobile">
+    <div className="column ">
       <Link to="/">
         <div className="card">
           <div className="card-header has-background-success has-text-centered">

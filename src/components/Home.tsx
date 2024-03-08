@@ -34,24 +34,21 @@ function Home() {
   return (
     <>
       {/*add a HERO (bulma) for full width of the page */}
-      <section className="hero is-half-height-with-navbar">
+      <section className="hero is-half-height-with-navbar mt-7 pt-7">
         <div className="hero-body has-text-centered pb-1">
           <div className="container">
             <div className="card py-5 has-background-light">
-              <p className="title">
-                Discover the World of Plants: <br />
-                Your Favorites Unveiled 🌸
-              </p>
+              <p className="title">Discover the World of Plants 🌸</p>
               <p className="subtitle">
-                Type Their Common Names to Begin Your Journey 🌱
+                Type Their Names to Begin Your Journey 🌱
               </p>
               {/* Create an Input for a Seach Bar to look for plant (should be common
         name (or scientific) name) */}
             </div>
             <br />
-            <div className="level-item">
+            <div className="level-item ">
               <input
-                className="input is-primary is-rounded is-focused"
+                className="input is-primary is-rounded is-focused mr-2"
                 placeholder="Plant Name 🌴"
                 type="text"
                 value={searchPlant}
@@ -71,20 +68,18 @@ function Home() {
         </div>
       </section>
       {/*Add a plant card, where the looked-up plant will be featured */}
-      <section className="section">
-        <div className="columns is-multiline is-mobile is-centered">
-          <div className="column is-half">
-            <div className="column">
-              {plant && (
-                <PlantHomePage
-                  key={plant.id}
-                  commonName={plant.common_name}
-                  img={plant.image_url}
-                  family={plant.family}
-                  scientificName={plant.scientific_name}
-                />
-              )}
-            </div>
+      <section className="section ">
+        <div className="columns is-mobile is-centered is-two-third-tablet">
+          <div className="column is-one-third">
+            {plant && (
+              <PlantHomePage
+                key={plant.id}
+                commonName={plant.common_name}
+                img={plant.image_url}
+                family={plant.family}
+                scientificName={plant.scientific_name}
+              />
+            )}
           </div>
         </div>
       </section>
