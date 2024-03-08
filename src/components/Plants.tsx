@@ -2,7 +2,7 @@ import React from "react";
 import PlantCard from "./PlantCard";
 
 function Plants() {
-  const [plants, updatePlants] = React.useState([]);
+  const [plants, updatePlants] = React.useState([] as any);
 
   async function fetchPlants() {
     try {
@@ -34,7 +34,7 @@ function Plants() {
       <div className="container">
         {/*   // A card/plant, that should feature : */}
         <div className="columns is-multiline">
-          {plants?.map((plant) => {
+          {plants?.map((plant: any) => {
             return (
               <PlantCard
                 key={plant.id}
