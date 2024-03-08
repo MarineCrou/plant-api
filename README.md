@@ -3,6 +3,7 @@
 ## Introduction
 
 This project aimed to enable us to better understand the use of React, APIs, and Routers by creating an interactive multi-page website. I chose a public plant API because of my love for plants, hoping to create a somewhat useful website for learning more about our dear living friends. Originally planned as a 2-day team project, I found myself working solo due to being under the weather. Despite this setback and having only a day to work, I managed to meet the basic requirements: deploying a multi-page site, fetching data from the public API [trefle.io](https://trefle.io), and using Bulma for styling. This website is now live on Netlify, with no installation requirements to explore its features.
+To check out the page follow : https://plant-search-site.netlify.app/
 
 ## Features
 
