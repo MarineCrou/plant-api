@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 //   family: string;
 // }
 
-function PlantCard({ commonName, img, scientificName, family }) {
+function PlantCard({ commonName, img, scientificName, family }: any) {
   return (
     <div className="column is-one-quarter-desktop is-one-third-tablet is-mobile">
       <Link to="/">

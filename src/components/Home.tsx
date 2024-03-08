@@ -1,7 +1,7 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 function Home() {
-  const [plant, setPlant] = React.useState(null);
+  const [plant, setPlant] = React.useState(null as any);
   const [searchPlant, setSearchPlant] = React.useState("");
 
   async function fetchPlants() {
