@@ -5,17 +5,18 @@ import Plants from "./Plants";
 
 function Plants2() {
   const [plants, updatePlants] = React.useState([] as any);
+  const [page, updatePage] = React.useState([] as any);
 
   async function fetchPlants() {
     try {
       const resp = await fetch(
-        "/api/plants?token=" + import.meta.env.VITE_API_KEY + "&page=2"
+        "/api/plants?token=" + import.meta.env.VITE_API_KEY + "&page=" + page
       );
       if (!resp.ok) {
         throw new Error(`API call failed with status: ${resp.status}`);
       }
       const plantData = await resp.json();
-      updatePlants(plantData.data); // Access the 'data' array from the response
+      updatePlants(plantData.data);
     } catch (error) {
       console.error("Failed to fetch plants:", error);
     }
@@ -53,7 +54,9 @@ function Plants2() {
           })}
         </div>
         <Link to="/plants">
-          <button className="button is-success">Previous Page</button>
+          <button className="button is-success-light mr-4">
+            Previous Page
+          </button>
         </Link>
         <button className="button is-success">Next Page</button>
       </div>
