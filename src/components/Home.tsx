@@ -74,6 +74,7 @@ function Home() {
             {plant && (
               <PlantHomePage
                 key={plant.id}
+                year={plant.year}
                 commonName={plant.common_name}
                 img={plant.image_url}
                 family={plant.family}
