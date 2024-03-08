@@ -24,7 +24,7 @@ Despite the time constraints, the project kicked off with a comprehensive design
 
 ## Implementing the MVP
 
-By the end of the development period (1 day), a minimum viable product was ready. Unfortunately, time constraints prevented the addition of several desired features. Future updates may include these enhancements.
+By the end of the development period (1 day), a minimum viable product was ready. Unfortunately, time constraints prevented the addition of several desired features. Future updates may include these enhancements 🤞.
 
 - **MVP Home Page** ![Plants MVP Home Page](./src/styles/img/readme%20-%20home%20page.png)
 - **MVP Page 2** ![Plants MVP Page 2](./src/styles/img/readme-mpv%20page%202.png)
