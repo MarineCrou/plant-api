@@ -45,6 +45,7 @@ function Plants() {
                 // 3. Image (data.map(item => console.log(item.common_name)
                 img={plant.image_url}
                 // 2. Scientific Name (data.map(item => console.log(item.scientific_name))
+                year={plant.year}
                 scientificName={plant.scientific_name}
                 // 4. Family (data.map(plant => console.log(plant.family))
                 family={plant.family}

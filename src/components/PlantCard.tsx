@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 //   family: string;
 // }
 
-function PlantCard({ commonName, img, scientificName, family }: any) {
+function PlantCard({ commonName, img, scientificName, family, year }: any) {
   return (
     <div className="column is-one-quarter-desktop is-one-third-tablet is-mobile">
       <Link to="/">
@@ -22,6 +22,10 @@ function PlantCard({ commonName, img, scientificName, family }: any) {
             </figure>
           </div>
           <div className="card-content">
+            <p>
+              <strong> Year Discovered: </strong>
+              {year}{" "}
+            </p>
             <p>
               <strong> Scientific Name: </strong>
               {scientificName}{" "}
