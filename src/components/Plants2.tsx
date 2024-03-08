@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PlantCard from "./PlantCard";
-import Plants2 from "./Plants2";
+import Plants from "./Plants";
 
-function Plants() {
+function Plants2() {
   const [plants, updatePlants] = React.useState([] as any);
 
   async function fetchPlants() {
     try {
       const resp = await fetch(
-        "/api/plants?token=" + import.meta.env.VITE_API_KEY
+        "/api/plants?token=" + import.meta.env.VITE_API_KEY + "&page=2"
       );
       if (!resp.ok) {
         throw new Error(`API call failed with status: ${resp.status}`);
@@ -52,12 +52,13 @@ function Plants() {
             );
           })}
         </div>
-        <Link to="/plants2">
-          <button className="button is-success">Next Page</button>
+        <Link to="/plants">
+          <button className="button is-success">Previous Page</button>
         </Link>
+        <button className="button is-success">Next Page</button>
       </div>
     </section>
   );
 }
 
-export default Plants;
+export default Plants2;

@@ -34,8 +34,8 @@ function Home() {
   return (
     <>
       {/*add a HERO (bulma) for full width of the page */}
-      <section className="hero is-half-height-with-navbar mt-7 pt-7">
-        <div className="hero-body has-text-centered pb-1">
+      <section className="hero is-half-height-with-navbar">
+        <div className="hero-body has-text-centered">
           <div className="container">
             <div className="card py-5 has-background-light">
               <p className="title">Discover the World of Plants 🌸</p>

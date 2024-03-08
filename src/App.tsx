@@ -9,6 +9,7 @@ import Plants from "./components/Plants";
 import Navbar from "./components/NavBar";
 import PlantCard from "./components/PlantCard";
 import PlantHomePage from "./components/PlantHomePage";
+import Plants2 from "./components/Plants2";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/plants" element={<Plants />} />
+          <Route path="/plants2" element={<Plants2 />} />
         </Routes>
       </div>
     </Router>
