@@ -1,5 +1,5 @@
 import React from "react";
-import PlantCard from "./PlantCard";
+import PlantHomePage from "./PlantHomePage";
 function Home() {
   const [plant, setPlant] = React.useState(null as any);
   const [searchPlant, setSearchPlant] = React.useState("");
@@ -71,21 +71,23 @@ function Home() {
         </div>
       </section>
       {/*Add a plant card, where the looked-up plant will be featured */}
-      <div className="columns is-multiline is-mobile is-centered is-one">
-        <div className="column is-half">
-          <div className="column">
-            {plant && (
-              <PlantCard
-                key={plant.id}
-                commonName={plant.common_name}
-                img={plant.image_url}
-                family={plant.family}
-                scientificName={plant.scientific_name}
-              />
-            )}
+      <section className="section">
+        <div className="columns is-multiline is-mobile is-centered">
+          <div className="column is-half">
+            <div className="column">
+              {plant && (
+                <PlantHomePage
+                  key={plant.id}
+                  commonName={plant.common_name}
+                  img={plant.image_url}
+                  family={plant.family}
+                  scientificName={plant.scientific_name}
+                />
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
   // ♦️ card should fature => plantCard (where common Name resonates with searched name)

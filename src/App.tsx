@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import Plants from "./components/Plants";
 import Navbar from "./components/NavBar";
 import PlantCard from "./components/PlantCard";
+import PlantHomePage from "./components/PlantHomePage";
 
 function App() {
   return (
@@ -19,7 +20,6 @@ function App() {
           <Route path="/plants" element={<Plants />} />
         </Routes>
       </div>
-      {/* <h1>Hello world</h1> */}
     </Router>
   );
 }
