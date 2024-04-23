@@ -10,7 +10,7 @@ function Plants2() {
   async function fetchPlants() {
     try {
       const resp = await fetch(
-        "/api/plants?token=" + import.meta.env.VITE_API_KEY + "&page=" + page
+        "/api/plants?token=" + import.meta.env.VITE_API_KEY + "&page=2" + page
       );
       if (!resp.ok) {
         throw new Error(`API call failed with status: ${resp.status}`);
